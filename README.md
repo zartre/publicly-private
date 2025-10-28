@@ -1,5 +1,8 @@
 # 🔐 Publicly Private - Encrypted Communication POC
 
+> [!info]
+> This project is written entirely by Claude Sonnet 4.5.
+
 A proof-of-concept application demonstrating asymmetric (RSA) encryption between a Rust/Leptos frontend and a TypeScript/Hono backend running on Bun.
 
 ## Overview
@@ -179,7 +182,7 @@ Accepts encrypted name, returns encrypted greeting
   - Can encrypt outgoing data
   - Can decrypt server responses (server encrypts with private key)
   - **Cannot** decrypt incoming encrypted messages from other users
-  
+
 - **Backend**: Has **private key only** (read from `.env` at runtime)
   - Can decrypt incoming requests
   - Can encrypt responses
@@ -187,9 +190,9 @@ Accepts encrypted name, returns encrypted greeting
 
 ### Security Benefits
 
-✅ **Proper separation**: Private key stays on backend  
-✅ **Forward security**: Frontend can't decrypt messages meant for backend  
-✅ **Authentic responses**: Only backend (with private key) can create valid responses  
+✅ **Proper separation**: Private key stays on backend
+✅ **Forward security**: Frontend can't decrypt messages meant for backend
+✅ **Authentic responses**: Only backend (with private key) can create valid responses
 ✅ **Environment-based**: Keys loaded from `.env` files, not hardcoded
 
 ### Production Recommendations
